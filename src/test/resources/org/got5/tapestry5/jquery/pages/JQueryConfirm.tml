@@ -1,0 +1,45 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+
+
+
+    <br />
+    <br /><br />
+    <br />
+    <br />
+    <br />
+
+	<t:pagelink t:id="pageLinkTest" page="index" message="Message de confirmation" t:mixins="jquery/Confirm">PageLink confirmation test</t:pagelink>
+	
+	<form t:type="form" t:id="loginForm">
+	
+		<t:label for="userName"/>:
+        <input t:type="TextField" t:id="userName" t:value="login"/>
+        <br/>
+        
+		<t:label for="password"/>:
+        <input t:type="PasswordField" t:id="password" t:value="password"/>
+        <br/>
+            
+    	<t:submit t:id="btnValid" value="Login" message="Valider les informations?" t:mixins="jquery/Confirm"/>
+    	
+	</form>
+	
+	<t:zone t:id="counterZone" id="counterZone">
+		<p>You have clicked the link <strong>${clickCount}</strong> times.</p>
+        <p>
+            <t:eventlink t:id="clicker" t:zone="^" t:event="action" t:message="Test de zone" t:mixins="jquery/Confirm">increment the count</t:eventlink>
+        </p>
+        <p>
+            <t:eventlink t:id="clicker2" t:zone="^" t:event="action" t:message="Test de zone" t:mixins="jquery/Confirm" t:useDefaultConfirm="true">increment the count</t:eventlink>
+        </p>
+        <p>
+            <t:actionlink t:id="clicker3" t:zone="^" t:message="Test de zone" t:mixins="jquery/Confirm">increment the count</t:actionlink>
+        </p>
+        <p>
+            <t:actionlink t:id="clicker4" t:zone="^" t:message="Test de zone" t:mixins="jquery/Confirm" t:useDefaultConfirm="true">increment the count</t:actionlink>
+        </p>
+
+	</t:zone>
+	
+
+</html>

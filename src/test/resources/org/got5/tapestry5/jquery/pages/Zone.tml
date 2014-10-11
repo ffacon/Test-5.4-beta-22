@@ -1,0 +1,71 @@
+<html t:type="layout"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+
+
+<div class="row">
+	<div class="span12">
+		<section id="list" style="padding-top: 30px;">
+			<div class="page-header">
+				<h1>Zone</h1>
+			</div>
+			<h3>Triggered by action link</h3>
+    <p>
+        <t:actionlink t:id="myActionLink" t:zone="myZone">
+            Refresh
+        </t:actionlink>
+    </p>
+    <t:zone t:id="myZone">
+        <t:delegate t:to="theBlockActionLink" />
+    </t:zone>
+    <t:block t:id="myBlockActionLink">
+        Counting via AJAX : ${count}
+    </t:block>
+    <h3>Triggered by external form</h3>
+    <t:zone t:id="myZone2">
+        <t:delegate t:to="theBlockForm" />
+    </t:zone>
+    <t:form t:zone="myZone2" t:id="myForm">
+        <t:textfield t:value="dummy"/><t:submit t:id="submit"/>
+    </t:form>
+    <t:block t:id="myBlockForm">
+        <p>
+            Dummy value is : ${dummy}
+        </p>
+        <t:ifNotNull t:test="dummy">
+            <t:DummyScriptAndCSSAdder/>
+        </t:ifNotNull>
+    </t:block>
+    
+    <t:form t:zone="multiZone1" t:id="myMultiZoneUpdateForm">
+        <t:submit t:id="multiSubmit" />
+    </t:form>
+    <t:zone t:id="multiZone1">
+        <t:delegate to="multiUpdateBlock1" />
+    </t:zone>
+    <t:zone t:id="multiZone2">
+        <t:delegate to="multiUpdateBlock2" />
+    </t:zone>
+    <t:block t:id="defaultBlock">
+        <p>default zone content</p>
+    </t:block>
+    <t:block t:id="multiUpdateBlock">
+        <p>rendering block-${blockId} after multi zone update ${count}</p>
+    </t:block>
+    
+    <t:form t:id="ajaxForm">
+
+        <t:zone t:id="formZone" id="formZone">
+            First Name: <t:textfield t:id="firstName" value="firstName" t:validate="required" /><br/>
+            Last Name: <t:textfield t:id="lastName" value="lastName" t:validate="required"/><br/>
+        </t:zone>
+
+        <t:actionLink t:id="switch" t:zone="formZone">Switch fields</t:actionLink>
+
+        <input type="submit" />
+
+        <t:errors/>
+    </t:form>		</section>
+	</div>
+</div>
+</html>
