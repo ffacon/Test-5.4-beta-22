@@ -89,7 +89,7 @@
 						class="icon-chevron-right"></i> jGrowl</a></li>
 				<li><a t:type="pagelink" t:page="jquerydialog"><i
 						class="icon-chevron-right"></i> jQuery Dialog</a></li>
-				<li><a t:type="pagelink" t:page="jquerypalette"><i
+				<li><a t:type="pagelink" t:page="ext/jquerypalette"><i
 						class="icon-chevron-right"></i> jQuery Palette</a></li>
 				<li><a t:type="pagelink" t:page="JScrollPane"><i
 						class="icon-chevron-right"></i> JScrollPane</a></li>
