@@ -38,7 +38,7 @@
 			<ul class="nav nav-list bs-docs-sidenav">
 				<li><a t:type="pagelink" t:page="jqueryaccordion"><i
 						class="icon-chevron-right"></i> Accordion</a></li>
-				<li><a t:type="pagelink" t:page="jqueryautocomplete"><i
+				<li><a t:type="pagelink" t:page="ext/jqueryautocomplete"><i
 						class="icon-chevron-right"></i> Autocomplete</a></li>
 				<li><a t:type="pagelink" t:page="button"><i
 						class="icon-chevron-right"></i> Button</a></li>
